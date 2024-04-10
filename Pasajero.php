@@ -1,20 +1,20 @@
 <?php
 
 class Pasajero{
-    // atributos
+    
+    //ATRIBUTOS
     private $nombre;
     private $apellido;
     private $numDocumento;
-    private $telefono;
 
-    // metodos
-    function __construct($nombre, $apellido, $telefono, $numDocumento) {
+    //MÉTODO CONSTRUCTOR, SE ENCARGA DE CONSTRUIR NUESTRO OBJETO
+    function __construct($nombre, $apellido, $numDocumento) {
     	$this->nombre = $nombre;
     	$this->apellido = $apellido;
-        $this->telefono = $telefono;
     	$this->numDocumento = $numDocumento;
     }
 
+    //MÉTODO GET, QUE SE ENCARA DE OBTENER EL VALOR DE UN ATRIBUTO Y MOSTRARLO
     public function getNombre() {
     	return $this->nombre;
     }
@@ -27,43 +27,24 @@ class Pasajero{
     	return $this->numDocumento;
     }
 
-    public function getTelefono() {
-    	return $this->telefono;
-    }
-
-    /**
-    * @param $nombre
-    */
+    //MÉTODO SET, QUE SE ENCARGA DE MODIFICAR LOS VALORES DE LOS ATRIBUTOS
     public function setNombre($nombre) {
     	$this->nombre = $nombre;
     }
 
-    /**
-    * @param $apellido
-    */
     public function setApellido($apellido) {
     	$this->apellido = $apellido;
     }
 
-    /**
-    * @param $numDocumento
-    */
     public function setNumDocumento($numDocumento) {
     	$this->numDocumento = $numDocumento;
     }
 
-    /**
-    * @param $telefono
-    */
-    public function setTelefono($telefono) {
-    	$this->telefono = $telefono;
-    }
-
+    //MÉTODO TO STRING QUE IMPRIME EN PANTALLA NUESTRO OBJETO CON SUS ATRIBUTOS
     public function __toString(){
         $cadena = "\nNOMBRE: " . $this->getNombre()."|". 
                   " APELLIDO: " . $this->getApellido()."|".
-                  " NUMERO DE DOCUMENTO: " . $this->getNumDocumento()."|".
-                  " TELEFONO: " . $this->getTelefono() ;
+                  " NUMERO DE DOCUMENTO: " . $this->getNumDocumento()."|";
         return $cadena;
     }
 }

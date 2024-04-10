@@ -1,71 +1,62 @@
 <?php
  class ResponsableV{
-    // atributos
-    private $numEmpleado;
-    private $numLicencia;
-    private $nombre;
-    private $apellido;
+
+   //ATRIBUTOS
+   private $numEmpleado;
+   private $numLicencia;
+   private $nombre;
+   private $apellido;
     
-
-    function __construct($numEmpleado, $numLicencia, $nombre, $apellido) {
-    	$this->numEmpleado = $numEmpleado;
-    	$this->numLicencia = $numLicencia;
-    	$this->nombre = $nombre;
-    	$this->apellido = $apellido;
+   //MÉTODO CONSTRUCTOR, SE ENCARGA DE CONSTRUIR NUESTRO OBJETO
+   function __construct($numEmpleado, $numLicencia, $nombre, $apellido) {
+   $this->numEmpleado = $numEmpleado;
+   $this->numLicencia = $numLicencia;
+   $this->nombre = $nombre;
+   $this->apellido = $apellido;
     
-    }
+   }
 
-    public function getNumEmpleado() {
-    	return $this->numEmpleado;
-    }
+   //MÉTODO GET, QUE SE ENCARA DE OBTENER EL VALOR DE UN ATRIBUTO Y MOSTRARLO
+   public function getNumEmpleado() {
+      return $this->numEmpleado;
+   }
 
-    public function getNumLicencia() {
-    	return $this->numLicencia;
-    }
+   public function getNumLicencia() {
+      return $this->numLicencia;
+   }
 
-    public function getNombre() {
-    	return $this->nombre;
-    }
+   public function getNombre() {
+      return $this->nombre;
+   }
 
-    public function getApellido() {
-    	return $this->apellido;
-    }
+   public function getApellido() {
+   return $this->apellido;
+   }
 
-    /**
-    * @param $numEmpleado
-    */
-    public function setNumEmpleado($numEmpleado) {
-    	$this->numEmpleado = $numEmpleado;
-    }
+   //MÉTODO SET, QUE SE ENCARGA DE MODIFICAR LOS VALORES DE LOS ATRIBUTOS
+   public function setNumEmpleado($numEmpleado) {
+      $this->numEmpleado = $numEmpleado;
+   }
 
-    /**
-    * @param $numLicencia
-    */
-    public function setNumLicencia($numLicencia) {
-    	$this->numLicencia = $numLicencia;
-    }
+   public function setNumLicencia($numLicencia) {
+      $this->numLicencia = $numLicencia;
+   }
 
-    /**
-    * @param $nombre
-    */
-    public function setNombre($nombre) {
-    	$this->nombre = $nombre;
-    }
+   public function setNombre($nombre) {
+      $this->nombre = $nombre;
+   }
 
-    /**
-    * @param $apellido
-    */
-    public function setApellido($apellido) {
-    	$this->apellido = $apellido;
-    }
+   public function setApellido($apellido) {
+      $this->apellido = $apellido;
+   }
 
-     //PARA IMPRIMIR
-     public function __toString(){
+   //MÉTODO TO STRING QUE IMPRIME EN PANTALLA NUESTRO OBJETO CON SUS ATRIBUTOS
+   public function __toString(){
       $cadena = "\nNOMBRE RESPONSABLE: " . $this->getNombre()."|".
-                " APELLIDO RESPONSABLE: " . $this->getApellido()."|".
-                " NUMERO DE EMPLEADO: " . $this->getNumEmpleado()."|".
-                " NUMERO DE LICENCIA: " . $this->getNumLicencia()."|" ;
+               " APELLIDO RESPONSABLE: " . $this->getApellido()."|".
+               " NUMERO DE EMPLEADO: " . $this->getNumEmpleado()."|".
+               " NUMERO DE LICENCIA: " . $this->getNumLicencia()."|" ;
       
       return $cadena;
-      }
+   }
  }

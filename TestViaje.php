@@ -17,10 +17,10 @@ include_once('ResponsableV.php');
      return $eleccion;
  }
 
-  $objPasajero1 = new Pasajero("jazmin", "valenzuela", 2994584611, 43530680);
-  $objPasajero2 = new Pasajero("nicolas", "torres", 2994448596,  43575236);
-  $objPasajero3 = new Pasajero("nicolas", "bucarey", 2994573646, 41911258);
-  $objPasajero4 = new Pasajero("victoria", "jimenez", 2992563144, 42457832);
+  $objPasajero1 = new Pasajero("carlos", "gutierrez", 43530680);
+  $objPasajero2 = new Pasajero("nicolas", "torres",  43575236);
+  $objPasajero3 = new Pasajero("facundo", "nuñez", 41911258);
+  $objPasajero4 = new Pasajero("abigail", "gomez", 42457832);
   
   $arregloPasajeros=[];
   $arregloPasajeros[0]= $objPasajero1;
@@ -29,7 +29,7 @@ include_once('ResponsableV.php');
   $arregloPasajeros[3]= $objPasajero4;
 
 
-  $objResponsable =  new ResponsableV(4322, 43530,"juan", "torres");
+  $objResponsable =  new ResponsableV(4322, 43530,"juan", "martinez");
 
 
   $objViaje = new Viaje(46598, "brasil", 10, $arregloPasajeros, $objResponsable);
@@ -49,9 +49,7 @@ include_once('ResponsableV.php');
                 $nombreNuevo=trim(fgets(STDIN));
                 echo "MODIFICAR APELLIDO: ";
                 $apellidoNuevo=trim(fgets(STDIN));
-                echo "MODIFICAR TELEFONO: ";
-                $telefonoNuevo=trim(fgets(STDIN));
-                $arregloModificado = $objViaje->modificarPasajero( $nombreNuevo, $apellidoNuevo, $telefonoNuevo, $dniBuscado);
+                $arregloModificado = $objViaje->modificarPasajero( $nombreNuevo, $apellidoNuevo, $dniBuscado);
                 echo "\nARREGLO MODIFICADO\n". $objViaje->mostrarPasajeros($arregloModificado);
             }
             else{
@@ -74,9 +72,7 @@ include_once('ResponsableV.php');
                     echo "el dni ingresado ya se encuentra, por favor ingresar otro: ";
                     $dni = trim(fgets(STDIN));
                 }
-                echo "INGRESE TELEFONO: ";
-                $telefono = trim(fgets(STDIN));
-                $objPasajero5 = new Pasajero($nombre, $apellido, $telefono, $dni);
+                $objPasajero5 = new Pasajero($nombre, $apellido, $dni);
                 $arregloPasajeros[]=$objPasajero5;
                 $objViaje->setObjColeccionPasajeros($arregloPasajeros);
             }

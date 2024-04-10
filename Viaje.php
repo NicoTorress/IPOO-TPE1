@@ -1,14 +1,15 @@
 <?php
 
 class Viaje{
-    // atributos
+
+    //ATRIBUTOS
     private $codigoViaje;
     private $destino;
     private $cantMaximaPasajeros;
     private $objColeccionPasajeros;
     private $objResponsable;
     
-    // metodos
+    //MÉTODO CONSTRUCTOR, SE ENCARGA DE CONSTRUIR NUESTRO OBJETO
     function __construct($codigoViaje, $destino, $cantMaximaPasajeros, $objColeccionPasajeros, $objResponsable) {
     	$this->codigoViaje = $codigoViaje;
     	$this->destino = $destino;
@@ -17,6 +18,7 @@ class Viaje{
         $this->objResponsable = $objResponsable;
     }
 
+    //MÉTODO GET, QUE SE ENCARA DE OBTENER EL VALOR DE UN ATRIBUTO Y MOSTRARLO
     public function getCodigoViaje() {
     	return $this->codigoViaje;
     }
@@ -29,8 +31,6 @@ class Viaje{
     	return $this->cantMaximaPasajeros;
     }
 
-    
-
     public function getObjResponsable() {
     	return $this->objResponsable;
     }
@@ -39,46 +39,29 @@ class Viaje{
     	return $this->objColeccionPasajeros;
     }
 
-    /**
-    * @param $objColeccionPasajeros
-    */
+    //MÉTODO SET, QUE SE ENCARGA DE MODIFICAR LOS VALORES DE LOS ATRIBUTOS
     public function setObjColeccionPasajeros($objColeccionPasajeros) {
     	$this->objColeccionPasajeros = $objColeccionPasajeros;
     }
 
-    /**
-    * @param $codigoViaje
-    */
     public function setCodigoViaje($codigoViaje) {
     	$this->codigoViaje = $codigoViaje;
     }
 
-    /**
-    * @param $destino
-    */
     public function setDestino($destino) {
     	$this->destino = $destino;
     }
 
-    /**
-    * @param $cantMaximaPasajeros
-    */
     public function setCantMaximaPasajeros($cantMaximaPasajeros) {
     	$this->cantMaximaPasajeros = $cantMaximaPasajeros;
     }
 
-   
-
-    /**
-    * @param $objResponsable
-    */
     public function setObjResponsable($objResponsable) {
     	$this->objResponsable = $objResponsable;
     }
 
-
-
-    public function modificarPasajero( $nombre, $apellido, $telefono, $dni){
+    //MÉTODOS ADICIONALES
+    public function modificarPasajero( $nombre, $apellido, $dni){
         $encontrado = false;
         $i=0;
         while($i<count($this->getObjColeccionPasajeros()) && !$encontrado){
@@ -86,7 +69,6 @@ class Viaje{
             if($dni == $coleccionPasajeros->getNumDocumento()){
                 $coleccionPasajeros->setNombre($nombre);
                 $coleccionPasajeros->setApellido($apellido);
-                $coleccionPasajeros->setTelefono($telefono);
                 $encontrado= true;
             }
             $i++;
